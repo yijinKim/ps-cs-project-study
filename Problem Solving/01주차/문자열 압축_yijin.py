@@ -23,9 +23,41 @@ def solution(s):
         if cnt > 1:
             tmp = str(cnt) + tmp
         answer += tmp
+        # print(answer)
         answer_len.append(len(answer))
 
     return min(answer_len)
 
-s = 'abcabcabcabcdededededede'
+# 스택 이용
+# def solution(s):
+#     answer_len = []
+#
+#     if len(s) == 1:
+#         return 1
+#
+#     for i in range(1, len(s) // 2 + 1):
+#         lst = [s[j:j + i] for j in range(0, len(s), i)]
+#         new_lst = []
+#         answer = ""
+#         new_lst.append(lst.pop(0))
+#         cnt = 1
+#         while lst:
+#             elem = lst.pop(0)
+#             if elem == new_lst[-1]:
+#                 cnt += 1
+#             else:
+#                 if cnt > 1:
+#                     answer += str(cnt) + new_lst.pop()
+#                 else:
+#                     answer += new_lst.pop()
+#                 new_lst.append(elem)
+#                 cnt = 1
+#         if cnt > 1:
+#             answer += str(cnt) + new_lst.pop()
+#         else:
+#             answer += new_lst.pop()
+#         answer_len.append(len(answer))
+#     return min(answer_len)
+
+s = 'xababcdcdababcdcd'
 print(solution(s))

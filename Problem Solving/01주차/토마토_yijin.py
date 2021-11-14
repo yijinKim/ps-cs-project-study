@@ -20,7 +20,7 @@ while queue:
     x, y, z = queue.popleft()
     for i in range(6):
         nx, ny, nz = x + dx[i], y + dy[i], z + dz[i]
-        if 0 <= nx < h and  0 <= ny < n and 0 <= nz < m and graph[nx][ny][nz] == 0:
+        if 0 <= nx < h and 0 <= ny < n and 0 <= nz < m and graph[nx][ny][nz] == 0 :
             queue.append([nx, ny, nz])
             graph[nx][ny][nz] = graph[x][y][z] + 1
 
@@ -28,7 +28,7 @@ day = 0
 for h in graph:
     if any(0 in array for array in h):
         print(-1)
-        exit(0)
+        exit(0) #break
     else:
         max_day =(max(map(max, h)))
         day = max(max_day, day)

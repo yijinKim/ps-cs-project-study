@@ -1,7 +1,3 @@
-[TOC]
-
-
-
 # 프로세스
 
 - 개념: **프로그램이 실행중인 상태**로 특정 메모리 공간에 코드가 적재되고 cpu가 명령어를 하나씩 수행하고 있는 상태.
@@ -14,7 +10,7 @@
   - data : 전역변수, 정적 변수
   - heap : 메모리 할당 
   - stack : 지역변수, 매개변수 등 일시적으로 저장하는 영역
-  - ![image-20211116233656942](C:\Users\YijinKim\AppData\Roaming\Typora\typora-user-images\image-20211116233656942.png)
+  - ![image](https://user-images.githubusercontent.com/33693066/142014907-c59abba2-c924-4ec8-9cf9-65ffe5a21927.png)
 
 - 프로세스 상태  ![image-20211116234058303](C:\Users\YijinKim\AppData\Roaming\Typora\typora-user-images\image-20211116234058303.png)
 

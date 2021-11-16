@@ -10,9 +10,11 @@
   - data : 전역변수, 정적 변수
   - heap : 메모리 할당 
   - stack : 지역변수, 매개변수 등 일시적으로 저장하는 영역
-  - ![image](https://user-images.githubusercontent.com/33693066/142014907-c59abba2-c924-4ec8-9cf9-65ffe5a21927.png)
+  - ![image](https://user-images.githubusercontent.com/33693066/142015160-3b9d1870-24dd-4295-97aa-58bf1f5bad93.png)
+  - 
 
-- 프로세스 상태  ![image-20211116234058303](C:\Users\YijinKim\AppData\Roaming\Typora\typora-user-images\image-20211116234058303.png)
+- 프로세스 상태 
+- ![image](https://user-images.githubusercontent.com/33693066/142014907-c59abba2-c924-4ec8-9cf9-65ffe5a21927.png)
 
   - 생성, 실행 ,대기, 준비, 종료
 

@@ -1,5 +1,3 @@
-from collections import deque
-
 N = int(input())
 lst = list(input())
 

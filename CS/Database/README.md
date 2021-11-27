@@ -1,10 +1,10 @@
 # Database
 
-1. [키](##key)
-2. [SQL JOIN](##sql-join)
-3. [SQL vs NoSQL](##sql-vs-nosql)
-4. [정규화 vs 반정규화](##정규화-vs-반정규화)
-5. [Transaction](##transaction)
+1. [키](#key)
+2. [SQL JOIN](#sql-join)
+3. [SQL vs NoSQL](#sql-vs-nosql)
+4. [정규화 vs 반정규화](#정규화-vs-반정규화)
+5. [Transaction](#transaction)
 
 
 <br/>

@@ -2,8 +2,8 @@ import sys
 from collections import defaultdict, Counter, deque
 input = sys.stdin.readline
 
-N = int(input().rstrip())
-lst = list(map(int, input().split()))
+# N = int(input().rstrip())
+# lst = list(map(int, input().split()))
 
 '''시간초과
 fdict = defaultdict(int)
@@ -32,7 +32,7 @@ print(*answer)
 stack = []
 n = int(input())
 lst = list(map(int, input().split()))
-cnt = collections.Counter(lst)
+cnt = Counter(lst)
 s = [[cnt[num], int(num)]for num in lst]
 answer = [-1 for _ in range(len(lst))]
 stack.append(0)
@@ -44,12 +44,20 @@ while stack and i < len(lst):
         answer[stack.pop()] = s[i][1]
         
     stack.append(i)
+    print(stack)
     i+=1
-print(*answer)    
+print(*answer)   
+
+[0, 1]
+[0, 1, 2]
+[0, 1, 2, 3]
+[0, 1, 2, 3, 4]
+[0, 1, 2, 5]
+[0, 1, 6]
 '''
 
-
-#924ms
+'''
+#924ms'''
 N = int(input().rstrip())
 lst = list(map(int, input().split()))
 
@@ -61,4 +69,20 @@ for i in range(len(lst)):
     while stack and cnt[lst[stack[-1]]] < cnt[lst[i]]:
         answer[stack.pop()] = lst[i]
     stack.append(i)
+    print(stack)
+
 print(*answer)
+
+'''
+7
+1 1 2 3 4 2 1
+
+[0]
+[0, 1]
+[0, 1, 2]
+[0, 1, 2, 3]
+[0, 1, 2, 3, 4]
+[0, 1, 2, 5]
+[0, 1, 6]
+-1 -1 1 2 2 1 -1
+'''

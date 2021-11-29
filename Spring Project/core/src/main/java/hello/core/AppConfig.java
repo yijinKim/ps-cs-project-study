@@ -24,15 +24,17 @@ public class AppConfig {
     //memberservice구현체 생성되고 memorymemberRepository로 들어감.
     @Bean
     public MemberService memberService() {
-
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository()); // 생성자 주입
     }
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
     @Bean
     public OrderService orderService() {
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
     @Bean

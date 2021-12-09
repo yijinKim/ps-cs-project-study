@@ -3,7 +3,10 @@ package hello.core.order;
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService{
 
 //    private final MemberRepository memberRepository =new MemoryMemberRepository();
@@ -11,13 +14,16 @@ public class OrderServiceImpl implements OrderService{
     private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
     private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
     */
-    private final MemberRepository memberRepository; // DIP 철저히 지키고 있음
-    private final DiscountPolicy discountPolicy;     // FIX OR RATE 일지 모름
+    @Autowired
+    private MemberRepository memberRepository; // DIP 철저히 지키고 있음
+    @Autowired
+    private DiscountPolicy discountPolicy;     // FIX OR RATE 일지 모름
 
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
+//    @Autowired
+//    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+//        this.memberRepository = memberRepository;
+//        this.discountPolicy = discountPolicy;
+//    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
@@ -32,4 +38,13 @@ public class OrderServiceImpl implements OrderService{
         return memberRepository;
     }
 
+    @Autowired
+    public void setMemberRepository(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
+    @Autowired
+    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }
 }

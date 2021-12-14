@@ -13,18 +13,22 @@ for _ in range(m):
     graph[a].append(b)
     indegree_list[b] += 1
 
-q = deque()
-for i in range(1, n+1):
-    if indegree_list[i] == 0:
-        q.append(i)
+def topology_sort():
+    answer = []
+    q = deque()
 
-answer = []
-while q:
-    node = q.popleft()
-    answer.append(node)
-    for i in graph[node]:
-        indegree_list[i] -= 1
+    for i in range(1, n+1):
         if indegree_list[i] == 0:
             q.append(i)
 
+    while q:
+        node = q.popleft()
+        answer.append(node)
+        for i in graph[node]:
+            indegree_list[i] -= 1
+            if indegree_list[i] == 0:
+                q.append(i)
+    return answer
+
+answer = topology_sort()
 print(*answer)
